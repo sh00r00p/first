@@ -33,4 +33,43 @@ class PageController extends Controller
     {
         return $this->render('BloggerBlogBundle:Page:about.html.twig');
     }
+    public function shoesAction()
+    {
+        $em = $this->getDoctrine()
+                   ->getManager();
+
+        $cat = 'shoes';
+        
+        $blogs = $em->createQueryBuilder()
+                    ->select('b')
+                    ->from('BloggerBlogBundle:Blog',  'b')
+                    ->where('b.tags = :category')
+                    ->setParameter('category', $cat)
+                    ->getQuery()
+                    ->getResult();
+        
+        return $this->render('BloggerBlogBundle:Page:index.html.twig', array(
+            'blogs' => $blogs
+        ));
+    }
+    
+    public function investAction()
+    {
+        $em = $this->getDoctrine()
+                   ->getManager();
+
+        $cat = 'investment';
+        
+        $blogs = $em->createQueryBuilder()
+                    ->select('b')
+                    ->from('BloggerBlogBundle:Blog',  'b')
+                    ->where('b.tags = :category')
+                    ->setParameter('category', $cat)
+                    ->getQuery()
+                    ->getResult();
+        
+        return $this->render('BloggerBlogBundle:Page:index.html.twig', array(
+            'blogs' => $blogs
+        ));
+    }
 }

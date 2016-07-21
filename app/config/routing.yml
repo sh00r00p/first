@@ -1,3 +1,7 @@
+mainmenu_menu:
+    resource: "@MainmenuMenuBundle/Resources/config/routing.yml"
+    prefix:   /
+
 blogger_blog:
     resource: "@BloggerBlogBundle/Resources/config/routing.yml"
     prefix:   /

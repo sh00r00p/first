@@ -1,0 +1,4 @@
+services:
+#    mainmenu_menu.example:
+#        class: Mainmenu\MenuBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

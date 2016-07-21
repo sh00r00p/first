@@ -16,3 +16,15 @@ BloggerBlogBundle_blog_show:
     requirements:
         methods:  GET
         id: \d+
+
+BloggerBlogBundle_shoes:
+    path:   /shoes
+    defaults: { _controller: "BloggerBlogBundle:Page:shoes" }
+    requirements:
+         methods:  GET
+
+BloggerBlogBundle_invest:
+    path:   /invest
+    defaults: { _controller: "BloggerBlogBundle:Page:invest" }
+    requirements:
+         methods:  GET
